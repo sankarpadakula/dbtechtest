@@ -33,8 +33,7 @@ public class TestDataHelper {
     public static DataEnvelope createTestDataEnvelopeApiObject() {
         DataBody dataBody = new DataBody(DUMMY_DATA);
         DataHeader dataHeader = new DataHeader(TEST_NAME, BlockTypeEnum.BLOCKTYPEA);
-
-        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody);
+        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody, TechTestApplication.MD5_CHECKSUM);
         return dataEnvelope;
     }
 
@@ -42,7 +41,7 @@ public class TestDataHelper {
         DataBody dataBody = new DataBody(DUMMY_DATA);
         DataHeader dataHeader = new DataHeader(TEST_NAME_EMPTY, BlockTypeEnum.BLOCKTYPEA);
 
-        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody);
+        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody, null);
         return dataEnvelope;
     }
 }

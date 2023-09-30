@@ -15,6 +15,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import java.time.Instant;
+import java.util.Objects;
 
 @Entity
 @Table(
@@ -47,5 +48,18 @@ public class DataHeaderEntity {
         if (createdTimestamp == null) {
             createdTimestamp = Instant.now();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DataHeaderEntity that = (DataHeaderEntity) o;
+        return Objects.equals(name, that.name) && blocktype == that.blocktype;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, blocktype);
     }
 }

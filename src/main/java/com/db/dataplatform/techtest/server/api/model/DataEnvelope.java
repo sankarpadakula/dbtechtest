@@ -22,4 +22,6 @@ public class DataEnvelope {
 
     @NotNull
     private DataBody dataBody;
+
+    private String checksum;
 }

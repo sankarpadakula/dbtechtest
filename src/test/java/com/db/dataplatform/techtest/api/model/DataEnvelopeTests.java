@@ -20,7 +20,7 @@ public class DataEnvelopeTests {
         DataHeader dataHeader = new DataHeader(TEST_NAME, BlockTypeEnum.BLOCKTYPEA);
         DataBody dataBody = new DataBody(DUMMY_DATA);
 
-        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody);
+        DataEnvelope dataEnvelope = new DataEnvelope(dataHeader, dataBody, null);
 
         assertThat(dataEnvelope).isNotNull();
         assertThat(dataEnvelope.getDataHeader()).isNotNull();
